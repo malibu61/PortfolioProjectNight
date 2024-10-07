@@ -1,0 +1,32 @@
+﻿@model PortfolioProjectNight.Models.Service
+
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Hizmet Güncelleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label style="display:none">Eğitim ID</label>
+    @Html.TextBoxFor(x => x.ServiceId, new { @class = "form-control", @style = "display:none" })
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Alt Başlık</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-warning">Hizmet Güncelle</button>
+
+</form>

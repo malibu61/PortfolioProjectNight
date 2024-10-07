@@ -1,0 +1,33 @@
+﻿@model PortfolioProjectNight.Models.Works
+
+@{
+    ViewBag.Title = "UpdateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2>Son Çalışma Güncelleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label style="display:none">Son Çalışma ID</label>
+    @Html.TextBoxFor(x=>x.WorkId, new { @class = "form-control", @style = "display:none" })
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <label>Resim Yolu</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-warning">Son Çalışma Güncelle</button>
+
+</form>

@@ -1,0 +1,60 @@
+﻿@model List<PortfolioProjectNight.Models.Contact>
+
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+    string subjectColor = "FFDC7F";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Tarih</th>
+        <th>Konu</th>
+        <th>Durum</th>
+        <th>Mesajı Aç</th>
+        <th>Mesajı Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+
+        switch (@item.Subject)
+        {
+            case "Teşekkür": subjectColor = "#FFF5CD"; break;
+            case "Öneri": subjectColor = "#BCF2F6"; break;
+            case "Proje Talebi": subjectColor = "#96CEB4"; break;
+            case "Referans": subjectColor = "#B7B7B7"; break;
+            case "Toplantı": subjectColor = "#A5B68D"; break;
+            case "Görüşme": subjectColor = "#FCCD2A"; break;
+            case "Reklam": subjectColor = "#D91656"; break;
+            case "Staj Talebi": subjectColor = "#98DED9"; break;
+            case "Şikayet": subjectColor = "#FF6600"; break;
+            default: subjectColor = "#FFDC7F"; break;
+        }
+
+    <tr>
+        <td>@count</td>
+        <td>@item.NameSurname</td>
+        <td>@item.SendDate</td>
+        <td style="background-color:@subjectColor">@item.Subject</td>
+
+        @if (item.IsRead == false)
+        {
+            <td><a href="/Message/ChangeMessageStatusToTrue/@item.ContactId" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+        }
+        else
+        {
+            <td><a href="/Message/ChangeMessageStatusToFalse/@item.ContactId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
+        }
+
+        <td><a href="/Message/MessageDetails/@item.ContactId" class="btn btn-warning">Mesajı Aç</a></td>
+        <td><a href="/Message/DeleteMessage/@item.ContactId" class="btn btn-danger">Mesajı Sil</a></td>
+    </tr>
+    }
+
+</table>
+

@@ -1,0 +1,28 @@
+-Tüm Alanlar Eksiksiz olacak
+
+-Bir tablo daha eklenecek. Stajlarım tablosu olacak. (intermtable). 
+ İçinde normal bir alan gibi olacak,  ve unu projeye dah
+ l edeceğiz.
+-CV'mi indir olacak.(indir kısmı), pdf dosyası oluştur ve oraya koy. tıklayınca pdf inecek.
+-Aynı işlem Admin paneli için de olacak(cv mi indir deyince)
+
+
+ yetenek listeleme sayfasına paging yapılacak(ve her sayfada 5 yetenek olacak)
+-Tüm konuların renkleri farklı olacak. switch case veya if else kullanılabilir. Bütün bölümler için navbar'a sekme eklenecek.(10 tane)- Referans(taşıma) kodları eklenmedi.
+
+
+-sosyal medyanın admin tarafında bir status olacak. ve statusu true olanlar burada sergilenecek. aktif veya pasif olacak.
+-required vb... tarzında attribute'ler kullanılacak. kafamıza göre. (max length vb.)
+
+-w3school'dan chart bul ve bunu kullan.(admin sayfasında - yeteneklerin oranlarını segileyecek). 
+ Sol menüye bir sekme daha ekle burada sergilettir.
+-Tüm projedeki tüm her şey eksiksiz çalışsın.
+-readme dosyası hazırlanacak github için. kullanılan teknolojiler eklenecek.
+
+
++mesajlar tablosunda 10 tane mesaj olacak. Mesaj konuları konu başlığına göre renklenecek. 
++admin panelinde tüm sekmeler çalışacak. (sol menüdeki tüm linkler de çalışacak)
++yeteneklerim kısmında 16 tane yetenek eklenecek.
++sosyal medya tablosu admin panelinde yer alacak. Ve sitedeki sosyal medya hesaplarını linkler içerecek.
++Admin panelindeki fotoğraf dinamik olacak(sql'den çekilecek)
+

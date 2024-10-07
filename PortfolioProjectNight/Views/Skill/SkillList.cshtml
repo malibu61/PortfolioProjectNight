@@ -1,0 +1,41 @@
+﻿@model PagedList.IPagedList<PortfolioProjectNight.Models.Skill>
+@using PagedList
+@using PagedList.Mvc
+
+@*@model List<PortfolioProjectNight.Models.Skill>*@
+
+@{
+    ViewBag.Title = "SkillList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yetenek Listesi ve İşlemleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Değer</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SkillId</td>
+            <td>@item.SkillName</td>
+            <td>@item.Rate</td>
+            <td><a href="/Skill/DeleteSkill/@item.SkillId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Skill/UpdateSkill/@item.SkillId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("SkillList", new { page }), new PagedListRenderOptions
+{
+    LiElementClasses = new List<string>
+    { "page-link"}
+})
+
+<a href="/Skill/CreateSkill" class="btn btn-primary">Yeni Yetenek Girişi</a>

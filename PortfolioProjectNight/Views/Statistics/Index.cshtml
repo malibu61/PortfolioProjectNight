@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2 class="mb-4">İstatistikler</h2>
+
+<div class="alert alert-success">Toplam Mesaj sayısı: <b>@ViewBag.totalMessageCount</b></div>
+
+<div class="alert alert-warning">Okunmuş Mesaj sayısı: <b>@ViewBag.messageIsReadTrueCount</b></div>
+
+<div class="alert alert-danger">Okunmamış Mesaj sayısı: <b>@ViewBag.messageIsReadFalseCount</b></div>
+
+<div class="alert alert-dark">
+    Yetenek sayısı: <b>@ViewBag.skillCount</b>
+</div>
+<div class="alert alert-info">Yeteneklerin Toplam Puanı: <b>@ViewBag.skillRateSum</b></div>
+
+<div class="alert alert-primary">Yeteneklerin Ortalama Puanı: <b>@ViewBag.skillRateAvg</b></div>
+
+<div class="alert alert-primary" style="background-color:orange">En Yüksek Puanlı Yetenek: <b>@ViewBag.maxRateSkillName</b></div>
+
+<div class="alert alert-primary" style="background-color:dimgrey">Referans Konulu Mesajların Sayısı: <b>@ViewBag.getMessageCountBySubjectReferences</b></div>
+
+<div class="alert alert-primary" style="background-color:greenyellow">İçinde h Harfi Geçen Okunmuş Mesajların Sayısı: <b>@ViewBag.getMessageCountByEmailContainAAndIsReadTrue</b></div>
+
+<div class="alert alert-primary" style="background-color:yellow">
+    Değeri 90 Olan Yetenek İsmi:
+    <b>@ViewBag.getSkillNameByRate90</b>
+</div>
+
+
+

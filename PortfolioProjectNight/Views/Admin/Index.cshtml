@@ -19,28 +19,11 @@
 
             @Html.Action("PartialNavbar", "Admin")
 
-
-
-            <h2 class="mb-4">Sidebar #01</h2>
-
-            <table class="table table-bordered">
-                <tr>
-                    <th>Ürün ID</th>
-                    <th>Ürün Adı</th>
-                    <th>Kategori</th>
-                    <th>Sil</th>
-                    <th>Güncelle</th>
-                </tr>
-                <tr>
-                    <td>A289457</td>
-                    <td>Domates</td>
-                    <td>Sebze</td>
-                    <td><button class="btn btn-success">Sil</button></td>
-                    <td><button class="btn btn-warning">Güncelle</button></td>
-                </tr>
-            </table>
+            @RenderBody()
 
         </div>
+
+      
     </div>
     @Html.Action("PartialScripts", "Admin")
 

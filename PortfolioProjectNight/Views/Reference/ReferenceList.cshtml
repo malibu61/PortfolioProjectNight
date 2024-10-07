@@ -1,0 +1,60 @@
+﻿@model  List<PortfolioProjectNight.Models.Reference>
+
+@{
+    ViewBag.Title = "ReferenceList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Referans Listem</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad Soyad</th>
+        <th>Başlık</th>
+        <th>Yorum</th>
+        <th>Fotoğraf</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ReferenceId</td>
+            <td>@item.NameSurname</td>
+            <td>@item.Title</td>
+
+            @if (@item.Comment.Length >= 50)
+            {
+
+                <td>@item.Comment.Substring(0, 50)...</td>
+
+            }
+            @if (@item.Comment.Length < 50)
+            {
+
+                <td>@item.Comment</td>
+
+            }
+
+            @if (@item.Image.Length >= 50)
+            {
+
+                <td>@item.Image.Substring(0, 50)...</td>
+
+            }
+            @if (@item.Image.Length < 50)
+            {
+
+                <td>@item.Image</td>
+
+            }
+
+            <td><a href="/Reference/DeleteReference/@item.ReferenceId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Reference/UpdateReference/@item.ReferenceId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Reference/CreateReference/" class="btn btn-info">Yeni Referans Bilgisi Ekle</a>

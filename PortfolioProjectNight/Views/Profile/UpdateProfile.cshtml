@@ -1,0 +1,51 @@
+﻿@model PortfolioProjectNight.Models.Profile
+
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Profil Güncelleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label style="display:none">Profil ID</label>
+    @Html.TextBoxFor(x => x.ProfileId, new { @class = "form-control", @style = "display:none" })
+    <br />
+
+    <label>Doğum Tarihi</label>
+    @Html.TextBoxFor(x => x.BirthDate, new { @class = "form-control" })
+    <br />
+
+    <label>E Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+
+    <label>Telefon</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+
+    <label>Github Hesabı</label>
+    @Html.TextBoxFor(x => x.Github, new { @class = "form-control" })
+    <br />
+
+    <label>Adres</label>
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <label>Resim Yolu</label>
+    @Html.TextAreaFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-warning">Profil Güncelle</button>
+
+</form>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CreateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yeni Son Çalışma Bilgisi Girişi</h2>
+
+<form method="post">
+
+    <label>Başlık</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" class="form-control" />
+    <br />
+    <label>Resim Yolu</label>
+    <input type="text" class="form-control" name="ImageUrl">
+    <br />
+    <button class="btn btn-info">Son Çalışma Bilgisini Kaydet</button>
+
+</form>

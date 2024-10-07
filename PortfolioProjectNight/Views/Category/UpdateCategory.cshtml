@@ -1,0 +1,23 @@
+﻿@model PortfolioProjectNight.Models.Category
+
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+
+<form method="post">
+
+
+    <label style="display:none">Kategori ID</label>
+    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control", @style = "display:none" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Kategori Güncelle</button>
+
+</form>

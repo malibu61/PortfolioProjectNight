@@ -1,0 +1,37 @@
+﻿@model List<PortfolioProjectNight.Models.Experience>
+
+@{
+    ViewBag.Title = "ExperienceList";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+
+<h2 class="mb-4">Deneyim Listesi ve İşlemleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Sıra Nu</th>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.ExperienceID</td>
+            <td>@item.Title</td>
+            <td>@item.SubTitle</td>
+            <td>@item.Description</td>
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<td><a href="/Experience/CreateExperience" class="btn btn-primary">Yeni Yetenek Girişi</a></td>

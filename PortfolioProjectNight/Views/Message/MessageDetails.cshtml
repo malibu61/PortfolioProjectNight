@@ -1,0 +1,35 @@
+﻿@model  PortfolioProjectNight.Models.Contact
+
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Mesaj Detay</h2>
+
+<div>
+    <label>ID</label>
+    @Html.TextBoxFor(x => x.ContactId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>E Mail</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Konu</label>
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.SendDate, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Mesaj</label>
+    @Html.TextAreaFor(x => x.Message, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+</div>
