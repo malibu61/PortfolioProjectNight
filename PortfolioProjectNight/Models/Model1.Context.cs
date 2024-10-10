@@ -39,5 +39,6 @@ namespace PortfolioProjectNight.Models
         public virtual DbSet<Profile> Profile { get; set; }
         public virtual DbSet<Reference> Reference { get; set; }
         public virtual DbSet<Works> Works { get; set; }
+        public virtual DbSet<Internship> Internship { get; set; }
     }
 }

@@ -74,8 +74,6 @@ namespace PortfolioProjectNight.Controllers
             return PartialView(values);
         }
 
-
-
         public PartialViewResult PartialExperience()
         {
             var values = context.Experience.ToList();
@@ -85,6 +83,12 @@ namespace PortfolioProjectNight.Controllers
         public PartialViewResult PartialEducation()
         {
             var values = context.Education.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialService()
+        {
+            var values = context.Service.ToList();
             return PartialView(values);
         }
 
@@ -98,11 +102,23 @@ namespace PortfolioProjectNight.Controllers
         {
             return PartialView();
         }
-        public FileResult DownloadCV()
+
+        public PartialViewResult PartialPortfolio()
         {
-            byte[] fileBytes = System.IO.File.ReadAllBytes(@"\Users\Muhammet Ali\Desktop\CV");
-            string fileName = "mycv.pdf";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            var values = context.Works.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialTestimonial()
+        {
+            var values = context.Reference.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialInternship()
+        {
+            var values = context.Internship.ToList();
+            return PartialView(values);
         }
 
     }

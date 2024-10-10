@@ -71,6 +71,16 @@
           <Property Name="NameSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Internship">
+          <Key>
+            <PropertyRef Name="Internid" />
+          </Key>
+          <Property Name="Internid" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="Profile">
           <Key>
             <PropertyRef Name="ProfileId" />
@@ -94,6 +104,7 @@
           <Property Name="Title" Type="varchar" MaxLength="30" />
           <Property Name="Comment" Type="varchar" MaxLength="500" />
           <Property Name="Image" Type="varchar" MaxLength="500" />
+          <Property Name="Rate" Type="tinyint" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -103,6 +114,9 @@
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Icon" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Feature1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Feature2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Feature3" Type="nvarchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -163,6 +177,7 @@
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feature" EntityType="Self.Feature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Internship" EntityType="Self.Internship" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -237,6 +252,9 @@
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Icon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Feature1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Feature2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Feature3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -299,6 +317,7 @@
           <EntitySet Name="Profile" EntityType="DbMyPortfolioNightModel.Profile" />
           <EntitySet Name="Reference" EntityType="DbMyPortfolioNightModel.Reference" />
           <EntitySet Name="Works" EntityType="DbMyPortfolioNightModel.Works" />
+          <EntitySet Name="Internship" EntityType="DbMyPortfolioNightModel.Internship" />
         </EntityContainer>
         <EntityType Name="Experience">
           <Key>
@@ -341,6 +360,7 @@
           <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Rate" Type="Byte" />
         </EntityType>
         <EntityType Name="Works">
           <Key>
@@ -350,6 +370,16 @@
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Internship">
+          <Key>
+            <PropertyRef Name="Internid" />
+          </Key>
+          <Property Name="Internid" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -413,6 +443,9 @@
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="DbMyPortfolioNightModel.Service">
               <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Feature3" ColumnName="Feature3" />
+                <ScalarProperty Name="Feature2" ColumnName="Feature2" />
+                <ScalarProperty Name="Feature1" ColumnName="Feature1" />
                 <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
@@ -491,6 +524,7 @@
           <EntitySetMapping Name="Reference">
             <EntityTypeMapping TypeName="DbMyPortfolioNightModel.Reference">
               <MappingFragment StoreEntitySet="Reference">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -506,6 +540,17 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Internship">
+            <EntityTypeMapping TypeName="DbMyPortfolioNightModel.Internship">
+              <MappingFragment StoreEntitySet="Internship">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Internid" ColumnName="Internid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

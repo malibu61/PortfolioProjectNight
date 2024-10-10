@@ -12,14 +12,12 @@ namespace PortfolioProjectNight.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class Internship
     {
-        public int ServiceId { get; set; }
+        public byte Internid { get; set; }
         public string Title { get; set; }
-        public string Icon { get; set; }
+        public string Date { get; set; }
+        public string SubTitle { get; set; }
         public string Description { get; set; }
-        public string Feature1 { get; set; }
-        public string Feature2 { get; set; }
-        public string Feature3 { get; set; }
     }
 }
