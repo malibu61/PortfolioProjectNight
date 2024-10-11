@@ -1,14 +1,13 @@
 -Tüm Alanlar Eksiksiz olacak
 
--Bir tablo daha eklenecek. Stajlarım tablosu olacak. (intermtable). 
- İçinde normal bir alan gibi olacak,  ve unu projeye dah
- l edeceğiz.
--CV'mi indir olacak.(indir kısmı), pdf dosyası oluştur ve oraya koy. tıklayınca pdf inecek.
--Aynı işlem Admin paneli için de olacak(cv mi indir deyince)
++Bir tablo daha eklenecek. Stajlarım tablosu olacak. (intermtable). 
+ İçinde normal bir alan gibi olacak,  ve unu projeye dahil edeceğiz.
++CV'mi indir olacak.(indir kısmı), pdf dosyası oluştur ve oraya koy. tıklayınca pdf inecek.
++Aynı işlem Admin paneli için de olacak(cv mi indir deyince)
 
 
- yetenek listeleme sayfasına paging yapılacak(ve her sayfada 5 yetenek olacak)
--Tüm konuların renkleri farklı olacak. switch case veya if else kullanılabilir. Bütün bölümler için navbar'a sekme eklenecek.(10 tane)- Referans(taşıma) kodları eklenmedi.
++yetenek listeleme sayfasına paging yapılacak(ve her sayfada 5 yetenek olacak)
++Tüm konuların renkleri farklı olacak. switch case veya if else kullanılabilir. Bütün bölümler için navbar'a sekme eklenecek.(10 tane)- Referans(taşıma) kodları eklenmedi.
 
 
 -sosyal medyanın admin tarafında bir status olacak. ve statusu true olanlar burada sergilenecek. aktif veya pasif olacak.

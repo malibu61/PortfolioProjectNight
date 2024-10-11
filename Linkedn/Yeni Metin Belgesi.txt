@@ -1,0 +1,12 @@
+Merhabalar ! ✨ 
+M&Y Yazılım Eğitim Akademi Danışmanlık bünyesinde Murat Yücedağ hocamın eğitmenliğinde almış olduğum 'Full Stack .Net Development Eğitimi' kapsamında ilk projemi tamamlamış bulunmaktayım. 
+Bu projede klasik bir portfolyo projesinin yerine, AspNet Mvc5 ile DbFirst yaklaşımında 'Dinamik Portfolyo Sitesi' uygulaması geliştirdik.
+
+
+Kullanılan Teknolojiler;
+- ASP.NET MVC Framework
+- Paging Özelliği
+- DB First yaklaşımıyla veritabanı oluşturma
+- CRUD işlemleri
+- HTML, CSS ve Bootstrap ile arayüz tasarımı
+- Chart.js Plugin grafikler

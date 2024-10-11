@@ -38,17 +38,30 @@ namespace PortfolioProjectNight.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult PartialAbout()
+        {
+            var values = context.About.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialEducation()
+        {
+            var values = context.Education.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialExperience()
+        {
+            var values = context.Experience.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+
         public PartialViewResult PartialHead()
-        {
-            return PartialView();
-        }
-
-        public PartialViewResult PartialScripts()
-        {
-            return PartialView();
-        }
-
-        public PartialViewResult PartialNavbar()
         {
             return PartialView();
         }
@@ -68,22 +81,26 @@ namespace PortfolioProjectNight.Controllers
             return PartialView(valuesSocialMedia);
         }
 
-        public PartialViewResult PartialAbout()
+        public PartialViewResult PartialInternship()
         {
-            var values = context.About.ToList();
+            var values = context.Internship.ToList();
             return PartialView(values);
         }
 
-        public PartialViewResult PartialExperience()
+        public PartialViewResult PartialNavbar()
         {
-            var values = context.Experience.ToList();
+            return PartialView();
+        }
+
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = context.Works.ToList();
             return PartialView(values);
         }
 
-        public PartialViewResult PartialEducation()
+        public PartialViewResult PartialScripts()
         {
-            var values = context.Education.ToList();
-            return PartialView(values);
+            return PartialView();
         }
 
         public PartialViewResult PartialService()
@@ -98,28 +115,12 @@ namespace PortfolioProjectNight.Controllers
             return PartialView(values);
         }
 
-        public PartialViewResult PartialFooter()
-        {
-            return PartialView();
-        }
-
-        public PartialViewResult PartialPortfolio()
-        {
-            var values = context.Works.ToList();
-            return PartialView(values);
-        }
-
         public PartialViewResult PartialTestimonial()
         {
             var values = context.Reference.ToList();
             return PartialView(values);
         }
 
-        public PartialViewResult PartialInternship()
-        {
-            var values = context.Internship.ToList();
-            return PartialView(values);
-        }
 
     }
 }
